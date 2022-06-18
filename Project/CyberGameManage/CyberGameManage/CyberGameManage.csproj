@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8957CEE2-CA7C-419E-A7E8-53618396A8BD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CyberGameManage</RootNamespace>
+    <AssemblyName>CyberGameManage</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataClasses1.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="fSpinning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fSpinning.Designer.cs">
+      <DependentUpon>fSpinning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rate\Decorator\FiveStar.cs" />
+    <Compile Include="Rate\Decorator\FourStar.cs" />
+    <Compile Include="Rate\Decorator\OneStar.cs" />
+    <Compile Include="Rate\Decorator\ThreeStar.cs" />
+    <Compile Include="Rate\Decorator\TwoStar.cs" />
+    <Compile Include="Rate\IRate.cs" />
+    <Compile Include="Rate\IFeedBack.cs" />
+    <Compile Include="Rate\RateDecorator.cs" />
+    <Compile Include="fMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fMessageBox.Designer.cs">
+      <DependentUpon>fMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillInfoDAO.cs" />
+    <Compile Include="DAO\CategoryDAO.cs" />
+    <Compile Include="DAO\ComputerDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\MenuDAO.cs" />
+    <Compile Include="DAO\OrderDAO.cs" />
+    <Compile Include="DTO\AccountDTO.cs" />
+    <Compile Include="DTO\BillDTO.cs" />
+    <Compile Include="DTO\BillInfoDTO.cs" />
+    <Compile Include="DTO\CategoryDTO.cs" />
+    <Compile Include="DTO\ComputerDTO.cs" />
+    <Compile Include="DTO\MenuDTO.cs" />
+    <Compile Include="DTO\OrderDTO.cs" />
+    <Compile Include="fAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAdmin.Designer.cs">
+      <DependentUpon>fAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fAccountProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAccountProfile.Designer.cs">
+      <DependentUpon>fAccountProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fComputerManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fComputerManager.Designer.cs">
+      <DependentUpon>fComputerManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Payment\Facade.cs" />
+    <Compile Include="Payment\MyMessageBox.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlDataApdapter.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="fMessageBox.resx">
+      <DependentUpon>fMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAdmin.resx">
+      <DependentUpon>fAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fAccountProfile.resx">
+      <DependentUpon>fAccountProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fComputerManager.resx">
+      <DependentUpon>fComputerManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fSpinning.resx">
+      <DependentUpon>fSpinning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Report.rdlc" />
+    <None Include="DataClasses1.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClasses1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataClasses1.dbml.layout">
+      <DependentUpon>DataClasses1.dbml</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="QuanLyQuanNet\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PCC123.png" />
+    <None Include="Resources\1.png" />
+    <None Include="Resources\2.png" />
+    <None Include="Resources\11.png" />
+    <None Include="Resources\34.png" />
+    <None Include="Resources\Daco_4650569.png" />
+    <None Include="Resources\desktop.png" />
+    <None Include="Resources\esport-logo-cyber-network.jpg" />
+    <None Include="Resources\faker.png" />
+    <None Include="Resources\Gaming-logo-template-on-transparent-background-PNG.png" />
+    <None Include="Resources\kissclipart-xbox-joystick-icon-clipart-xbox-360-controller-joy-cf39a587c3fd1c10.png" />
+    <None Include="Resources\PC.png" />
+    <None Include="Resources\PC1.png" />
+    <None Include="Resources\PC2.png" />
+    <None Include="Resources\PC11.png" />
+    <None Include="Resources\PCC.png" />
+    <None Include="Resources\PCC2.png" />
+    <None Include="Resources\PCC12.png" />
+    <None Include="Resources\PCC1231.png" />
+    <None Include="Resources\pngegg.png" />
+    <None Include="Resources\wer.png" />
+    <None Include="Resources\Payment.png" />
+    <None Include="Resources\Cash.png" />
+    <None Include="Resources\MoMo.png" />
+    <None Include="Resources\x.png" />
+    <None Include="Resources\Frenkie de Jong - FootyRenders.png" />
+    <None Include="Resources\147235_.png" />
+    <None Include="Resources\star.png" />
+    <None Include="Resources\LuckyCat2.gif" />
+    <None Include="Resources\AW306066_00.gif" />
+    <None Include="Resources\MaxPixel.net-Bet-Throwing-Dots-Throw-Rolling-Dice-Two-Play-312627.png" />
+    <None Include="Resources\MaxPixel.net-Gamble-Game-Dice-Risk-Luck-Three-Roll-Dots-312624.png" />
+    <None Include="Resources\MaxPixel.net-Gamble-Six-Eyes-Luck-Dice-Chance-310333.png" />
+    <None Include="Resources\MaxPixel.net-Game-Play-Five-Gambling-Dice-Bet-Chance-Luck-312622.png" />
+    <None Include="Resources\MaxPixel.net-Risk-Cube-Game-Rolling-Throwing-One-Dice-Dot-312625.png" />
+    <None Include="Resources\MaxPixel.net-Dice-Cube-Gamble-Four-Dots-Luck-Gambling-Chance-312623.png" />
+    <None Include="Resources\Dice Cube Die Six 6 Game Luck.png" />
+    <None Include="Resources\Dice Cube Die One 1 Game Luck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Daco_46505691.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Frenkie de Jong - FootyRenders1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\desktop1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lixiii1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\f78dff9a279e57929e3a6fc86948ab99.gif" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
